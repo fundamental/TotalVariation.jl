@@ -1,4 +1,6 @@
 module TotalVariation
+
+using  DSP
 export gstv, tv
 #See ``Total Variation Denoising With Overlapping Group Sparsity'' by
 # Ivan Selesnick and Po-Yu Chen (2013)
