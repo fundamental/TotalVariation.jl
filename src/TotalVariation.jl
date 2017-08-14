@@ -26,7 +26,7 @@ function gstv(y::Vector{Float64}, k::Int, λ::Float64;
 
     for i=1:iter
         u::Vector{Float64}              = diff(x)
-        r::Vector{Float64}              = sqrt(max(epsilon, conv(u.^2,h)))
+        r::Vector{Float64}              = sqrt.(max.(epsilon, conv(u.^2,h)))
         Λ::Vector{Float64}              = conv(1./r, h)[k:end-(k-1)]
         F::SparseMatrixCSC{Float64,Int} = spdiagm(1./Λ)/λ + DD
 
