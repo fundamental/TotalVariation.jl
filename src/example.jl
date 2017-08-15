@@ -7,8 +7,8 @@ ground_truth = vcat(ones(1000),
 -10sin.(linspace(0,pi,400)), 1ones(950))
 noise        = 10randn(length(ground_truth))
 combined     = ground_truth .+ noise
-gstv_out     = gstv(combined, 40, 15.0)
-tv_out       = tv(combined, 200.0)
+gstv_out     = TotalVariation.gstv(combined, 40, 15.0)
+tv_out       = TotalVariation.tv(combined, 200.0)
 
 figure(1)
 PyPlot.clf();
