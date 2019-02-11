@@ -1,9 +1,10 @@
+using Test
+using Random
+using Statistics
 using TotalVariation
-using Base.Test
-
 
 #Initial signals
-srand(0)
+Random.seed!(0)
 g_truth = [ones(100); 5*ones(200); -10*ones(100)]
 noise   = randn(size(g_truth))
 mixed   = g_truth .+ noise
