@@ -34,7 +34,7 @@ function gstv(y::Vector{Float64}, k::Int, λ::Float64;
         if(show_cost)
             #1/2||y-x||_2^2 + λΦ(Dx)
             #Where Φ(.) is the group sparse regularizer
-            println("Cost at iter ",ii," is ", 0.5*sum(abs(x.-y).^2) + λ*sum(r))
+            println("Cost at iter ",ii," is ", 0.5*sum(abs2.(x.-y)) + λ*sum(r))
         end
 
         tmp::Vector{Float64} = F\b
